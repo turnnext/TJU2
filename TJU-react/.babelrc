@@ -1,0 +1,110 @@
+{
+  "env":{
+     "development":{
+        "presets":[
+          "@zeit/next-typescript/babel",
+           [
+              "next/babel",
+              {
+                 "preset-env":{
+                    "targets":{
+                       "browsers":[
+                          "> 0.25%",
+                          "not dead"
+                       ]
+                    }
+                 },
+                 "styled-jsx":{
+                    "plugins":[
+                       "styled-jsx-plugin-sass"
+                    ]
+                 }
+              },
+
+           ]
+        ],
+        "plugins":[
+           // "@babel/plugin-proposal-do-expressions",
+           // "@babel/plugin-proposal-optional-chaining",
+           "inline-dotenv",
+           "add-react-displayname"
+        ]
+     },
+     "production":{
+        "presets":[
+          "@zeit/next-typescript/babel",
+           [
+              "next/babel",
+              {
+                 "preset-env":{
+                    "targets":{
+                       "browsers":[
+                          "> 0.25%",
+                          "not dead"
+                       ]
+                    }
+                 },
+                 "styled-jsx":{
+                    "plugins":[
+                       "styled-jsx-plugin-sass"
+                    ]
+                 }
+              },
+           ]
+        ],
+        "plugins":[
+           [
+              "lodash",
+              {
+                 "id":[
+                    "lodash",
+                    "recompose",
+                    "semantic-ui-react",
+                    "ramda"
+                 ]
+              }
+           ],
+           // "@babel/plugin-proposal-do-expressions",
+           // "@babel/plugin-proposal-optional-chaining",
+           "transform-inline-environment-variables",
+           "add-react-displayname",
+           [
+              "react-intl",
+              {
+                 "messagesDir":"src/lang/.messages"
+              }
+           ]
+        ]
+     },
+     "test":{
+        "presets":[
+          "@zeit/next-typescript/babel",
+           [
+
+              "@babel/preset-env",
+              {
+                 "modules":"commonjs"
+              },
+           ],
+           [
+              "next/babel",
+              {
+                 "preset-env":{
+                    "modules":"commonjs"
+                 },
+                 "styled-jsx":{
+                    "plugins":[
+                       "styled-jsx-plugin-sass"
+                    ]
+                 }
+              }
+           ]
+        ],
+        "plugins":[
+           // "@babel/plugin-proposal-do-expressions",
+           // "@babel/plugin-proposal-optional-chaining",
+           "import-graphql"
+        ]
+     }
+  }
+}

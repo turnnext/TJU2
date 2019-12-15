@@ -1,0 +1,13 @@
+query AccountSummary {
+  user {
+    id
+    email
+    shortname
+    institution
+    useCase
+    runningSession {
+      id
+      runtime
+    }
+  }
+}

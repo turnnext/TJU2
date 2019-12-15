@@ -1,0 +1,29 @@
+query SessionList {
+  sessions: allSessions {
+    id
+    name
+    status
+    blocks {
+      id
+      instances {
+        id
+        version
+        question {
+          id
+          title
+          type
+        }
+        results {
+          ... on SCQuestionResults {
+            totalParticipants
+          }
+          ... on FREEQuestionResults {
+            totalParticipants
+          }
+        }
+      }
+    }
+    createdAt
+    updatedAt
+  }
+}

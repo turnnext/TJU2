@@ -1,0 +1,3 @@
+src/.next
+src/lib/semantic
+*.stories.js
